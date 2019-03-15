@@ -6,7 +6,12 @@ $is_mobile = $mobile_detector->isMobile();
 $contact_phone = $is_mobile ? "tel:2484700086" : "/contact-us";
 
 $template_dir = get_stylesheet_directory_uri();
-$main_script = "$template_dir/dist/main.js";
+
+$scripts = array(
+	"$template_dir/dist/manifest.js",
+	"$template_dir/dist/common.js",
+	"$template_dir/dist/main.js"
+);
 
 function icon_url($dir, $name)
 {
@@ -37,7 +42,13 @@ if (!is_front_page()) {
 } ?>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/turn.js/3/turn.min.js"></script>
-<script src="<?=$main_script?>"></script>
+
+<?php
+	foreach ($scripts as $script) { 
+		?><script src="<?=$script?>"></script><?php 
+	}
+?>
+
 <?php wp_footer();?>
 
 </body>
