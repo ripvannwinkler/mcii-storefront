@@ -30,7 +30,7 @@ if (!is_front_page()) {
 				<a target="_blank" href="https://www.instagram.com/mciiclothing/">
 					<img src="<?=icon_url($template_dir, 'footer-instagram.png')?>" alt="Instagram"/></a>
 
-				<span class="site-copyright">&copy; MCII 2018</span>
+				<span class="site-copyright">&copy; MCII <?= date("Y") ?></span>
 
 				<a target="_blank" href="/contact-us">
 					<img src="<?=icon_url($template_dir, 'footer-email.png')?>" alt="Email"/></a>
